@@ -1,0 +1,125 @@
+public class Lab2{
+	// method for testing task 1
+	/*
+	public static void testActivity(){
+		// Test default constructor
+		System.out.println("Testing default constructor Activity()");
+		Activity act1 = new Activity();
+		System.out.println("Should say: 1.1.1");
+		act1.printDate();
+		
+		// Test filled constructor
+		// Test good input
+		System.out.println("Testing setDate");
+		System.out.println("Try 8, 8, 1304:");
+		Activity act2 = new Activity(8,8,1304);
+		System.out.println("Should say: 8.8.1304");
+		act2.printDate();
+		
+		// Test bad day
+		System.out.println("Testing setDate");
+		System.out.println("Try 40, 8, 1304:");
+		System.out.println("Should print error:");
+		Activity act3 = new Activity(40,8,1304);
+		System.out.println("Should say: 1.8.1304");
+		act3.printDate();
+		
+		// Test bad month
+		System.out.println("Testing setDate");
+		System.out.println("Try 8, 0, 1304:");
+		System.out.println("Should print error:");
+		Activity act4 = new Activity(8,0,1304);
+		System.out.println("Should say: 8.1.1304");
+		act4.printDate();
+		
+		// Test bad year
+		System.out.println("Testing setDate");
+		System.out.println("Try 8, 8, -1304:");
+		System.out.println("Should print error:");
+		Activity act5 = new Activity(8,8,-1304);
+		System.out.println("Should say: 8.8.1");
+		act5.printDate();
+		
+		
+		// Test date setting
+		System.out.println("Testing setDate");
+		System.out.println("Try 12, 2, 2017:");
+		act1.setDate(12, 2, 2017);
+		System.out.println("Should say: 12.2.2017");
+		act1.printDate();
+		
+		System.out.println("Try 5, 6, 2020:");
+		act1.setDate(5, 6, 2020);
+		System.out.println("Should say: 5.6.2020");
+		act1.printDate();
+		
+		System.out.println("Try 10, 14, 2017:");
+		System.out.println("Should print error:");
+		act1.setDate(10, 14, 2017);
+		System.out.println("Should say: 10.1.2017");
+		act1.printDate();
+		
+		act1.setDate(10, 4, 2017);
+		// Test Accessors
+		// Test getDay
+		System.out.println("Should say 10: " + act1.getDay());
+		
+		// Test getMonth
+		System.out.println("Should say 4: " + act1.getMonth());
+		
+		// Test getYear
+		System.out.println("Should say 2017: " + act1.getYear());
+	}
+	*/
+	// method for testing task 2
+	public static void testStock(){
+		System.out.println("\nTest Stock\n");
+		
+		Stock asset1 = new Stock();
+		System.out.println("Should print: : 1.1.1 curr: 0 prev: 0");
+		asset1.printStock();
+
+		
+		System.out.println("Checking Full Constructor:");
+		System.out.println("Should give error: ");
+		Stock asset2 = new Stock(15,5,2017,"GOOGL",-1, 0);
+		System.out.println("Should print: GOOGL: 15.5.2017 curr: 0 prev: 0");
+		asset2.printStock();
+		
+		
+		// Check that the full constructor works
+		Stock asset3 = new Stock(15,5,2017,"GOOGL",5,20);
+		System.out.println("Should print: GOOGL: 15.5.2017 curr: 20 prev: 5");
+		asset3.printStock();
+		
+		// Check change
+		System.out.println("Check getChange");
+		System.out.println("Should say 15: " + asset3.getChange());
+		
+		// Check name
+		System.out.println("Check getName");
+		System.out.println("Should say GOOGL: " + asset3.getName());
+		
+		// Check set name
+		System.out.println("Check setName");
+		asset3.setName("FB");
+		System.out.println("Should say FB: " + asset3.getName());
+		
+		// Check setValue 
+		System.out.println("Check setValue");
+		System.out.println("Should give error: ");
+		asset3.setCurrentValue(-1);
+		
+		System.out.println("Should give print: FB: 15.5.2017 curr: 100 prev: 0");
+		asset3.setCurrentValue(100);
+		asset3.printStock();
+		
+	}
+	
+	//main method to run the above functions.
+	public static void main(String [ ] args){
+		//testActivity();
+		testStock();
+	}
+	
+}
